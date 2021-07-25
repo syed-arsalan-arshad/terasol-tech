@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const userController = require('../controllers/user');
 
 router.get('/', (req, res, next) => {
     res.status(200).json({
@@ -11,15 +10,5 @@ router.get('/', (req, res, next) => {
         userDelete_URL: "DELETE --->   https://terasol-task-arsalan.herokuapp.com/api/people/:userId"
     });
 });
-
-router.post('/people', userController.createUser);
-
-router.get('/people', userController.fetchAllUser);
-
-router.get('/people/:userId', userController.fetchSingleUser);
-
-router.put('/people/:userId', userController.updateUser);
-
-router.delete('/people/:userId', userController.deleteUser);
 
 module.exports = router;
